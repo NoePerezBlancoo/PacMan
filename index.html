@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Noé Pérez - Desarrollador de Software - Pac-Man</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pac-Man: Edición Noé Pérez</h1>
+        <p>Explora mi versión personalizada del clásico Pac-Man. Diseñado y desarrollado como un reflejo de mis habilidades técnicas y creativas.</p>
+    </header>
+  
+    <main>
+        <div id="pacman"></div>
+        <p>Pulsa la <strong>N</strong> para empezar. ¿Listo para el desafío?</p>
+    </main>
+
+    <footer>
+        <p>Conéctate conmigo en <a href="https://www.linkedin.com/in/no%C3%A9-p%C3%A9rez-blanco-b79228187/">LinkedIn</a>.</p>
+    </footer>
+
+    <script src="pacman.js"></script>
+    <script src="modernizr-1.5.min.js"></script>
+    <script>
+        var el = document.getElementById("pacman");
+        if (Modernizr.canvas && Modernizr.localstorage &&
+            Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
+            window.setTimeout(function () { PACMAN.init(el, "./"); }, 0);
+        } else { 
+            el.innerHTML = "Actualiza tu navegador para una mejor experiencia.";
+        }
+    </script>
+</body>
+</html>
